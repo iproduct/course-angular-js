@@ -2,9 +2,19 @@
   "name": "typescript-webpack",
   "version": "1.0.0",
   "description": "Typescript demo using webpack.",
-  "main": "index.js",
+  "main": "./lib/bundle.js",
   "scripts": {
-    "test": "test"
+    "server": "npm run server:dev:hmr:livereload",
+    "server:dev": "node --max-old-space-size=4096 ./node_modules/webpack-dev-server/bin/webpack-dev-server --progress --profile --colors --watch --display-error-details --display-cached --open",
+    "server:dev:hmr": "npm run server:dev -- --hot",
+    "server:dev:hmr:livereload": "npm run server:dev:hmr -- --inline",
+    "server:prod": "npm run superstatic",
+    "setup": "npm install --global typings rimraf && npm install --no-optional",
+    "start": "npm run server",
+    "start:hmr": "npm run server:dev:hmr",
+    "start:hmr:livereload": "npm run server:dev:hmr:livereload",
+    "start:dev": "npm run server",
+    "start:prod": "npm run server:prod"
   },
   "repository": {
     "type": "git",
@@ -20,5 +30,17 @@
   "bugs": {
     "url": "https://github.com/iproduct/course-angular/issues"
   },
-  "homepage": "https://github.com/iproduct/course-angular#readme"
+  "homepage": "https://github.com/iproduct/course-angular#readme",
+  "dependencies": {
+    "es6-shim": "^0.35.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "html-webpack-plugin": "^2.19.0",
+    "source-map-loader": "^0.1.5",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4"
+  }
 }

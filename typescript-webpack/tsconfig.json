@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es5"
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+
+    "files": [
+        "./typings/main.d.ts",
+        "./src/greeter.ts"
+    ]
+}
