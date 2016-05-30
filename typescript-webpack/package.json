@@ -1,0 +1,24 @@
+{
+  "name": "typescript-webpack",
+  "version": "1.0.0",
+  "description": "Typescript demo using webpack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iproduct/course-angular.git"
+  },
+  "keywords": [
+    "typescript",
+    "webpack",
+    "demo"
+  ],
+  "author": "Trayan Iliev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/iproduct/course-angular/issues"
+  },
+  "homepage": "https://github.com/iproduct/course-angular#readme"
+}

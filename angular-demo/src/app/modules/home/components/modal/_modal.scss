@@ -1,0 +1,31 @@
+// styles of the foo component
+.modal-overlay {
+    position:absolute;
+    z-index:9999;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:#000;
+    opacity: 0.8;
+}
+.modal-background {
+    z-index:10000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+}
+.modal-content {
+    padding:10px;
+    text-align: center;
+}
+.modal-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
