@@ -1,4 +1,4 @@
-import {Promise} from 'es6-shim';
+import {Promise} from 'core-js';
 
 class Greeter {
     constructor(private name: string) { }

@@ -13,7 +13,7 @@
     ],
 
     "files": [
-        "./typings/main.d.ts",
+        "./typings/index.d.ts",
         "./src/greeter.ts",
         "./src/greeter-console.ts"
     ]

@@ -4,6 +4,7 @@
   "description": "Typescript demo using webpack.",
   "main": "./lib/bundle.js",
   "scripts": {
+    "postinstall": "npm run typings-install",
     "server": "npm run server:dev:hmr:livereload",
     "server:dev": "node --max-old-space-size=4096 ./node_modules/webpack-dev-server/bin/webpack-dev-server --progress --profile --colors --watch --display-error-details --display-cached --open",
     "server:dev:hmr": "npm run server:dev -- --hot",
@@ -13,8 +14,10 @@
     "start": "npm run server",
     "start:hmr": "npm run server:dev:hmr",
     "start:hmr:livereload": "npm run server:dev:hmr:livereload",
-    "start:dev": "npm run server",
-    "start:prod": "npm run server:prod"
+    "start:dev": "npm run server:dev",
+    "start:prod": "npm run server:prod",
+    "typings": "typings",
+    "typings-install": "typings install"
   },
   "repository": {
     "type": "git",
@@ -32,7 +35,7 @@
   },
   "homepage": "https://github.com/iproduct/course-angular#readme",
   "dependencies": {
-    "es6-shim": "^0.35.1"
+    "core-js": "^2.4.0"
   },
   "devDependencies": {
     "webpack": "^1.13.1",
