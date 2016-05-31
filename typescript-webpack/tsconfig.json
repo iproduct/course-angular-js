@@ -11,10 +11,7 @@
         "./**/*.ts",
         "!./node_modules/**/*.ts"
     ],
-
-    "files": [
-        "./typings/index.d.ts",
-        "./src/greeter.ts",
-        "./src/greeter-console.ts"
+    "exclude": [
+        "node_modules"  
     ]
 }

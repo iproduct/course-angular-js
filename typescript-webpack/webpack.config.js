@@ -51,8 +51,16 @@ module.exports = {
 
     module: {
         loaders: [
-            // All files with a '.ts' or '.tsx' extension will be handled by 'ts-loader'.
-            { test: /\.tsx?$/, loader: "ts-loader" }
+            // Support for .ts and .tsx files.
+            // reference: https://github.com/s-panferov/awesome-typescript-loader
+            {
+                test: /\.tsx?$/,
+                loader: "awesome-typescript-loader",
+                exclude: [
+                    /\.e2e\.ts$/, // exclude end-to-end tests
+                    /\.spec\.ts$/, // exclude unit tests
+                ],
+            }
         ],
 
         preLoaders: [
@@ -80,12 +88,23 @@ module.exports = {
         // reference: http://jaketrent.com/post/pushstate-webpack-dev-server/
         historyApiFallback: true,
 
+        // Cache generated modules and chunks to improve performance for multiple incremental builds.
+        // Enabled by default in watch mode.
+        // You can pass false to disable it
+        // reference: http://webpack.github.io/docs/configuration.html#cache
+        cache: true,
+
+        // Switch loaders to debug mode
+        // reference: http://webpack.github.io/docs/configuration.html#debug
+        debug: true,
+
+
         // file watch configuration
         watchOptions: {
             aggregateTimeout: 300,
             poll: 1000,
         },
-       // contentBase: helpers.root("src/app"), // necessary so that assets are accessible
+        // contentBase: helpers.root("src/app"), // necessary so that assets are accessible
 
         // Can be used to add specific headers
         headers: {
