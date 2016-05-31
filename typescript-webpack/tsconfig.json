@@ -14,6 +14,7 @@
 
     "files": [
         "./typings/main.d.ts",
-        "./src/greeter.ts"
+        "./src/greeter.ts",
+        "./src/greeter-console.ts"
     ]
 }
