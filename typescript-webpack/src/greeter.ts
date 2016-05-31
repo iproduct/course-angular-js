@@ -3,10 +3,10 @@ import {Promise} from 'core-js';
 class Greeter {
     constructor(private element: HTMLElement, private name: string) { }
     greet() {
-        this.greetAfterTimeout("Hello", name, 3000).then(
+        this.greetAfterTimeout("Hello", this.name, 3000).then(
             (msg: string) => {
                 this.element.innerHTML += msg;
-                return this.greetAfterTimeout("<br>Hi again", name, 2000);
+                return this.greetAfterTimeout("<br>Hi again", this.name, 2000);
         }).then(
             (msg: string) => {
                 this.element.innerHTML += msg;
