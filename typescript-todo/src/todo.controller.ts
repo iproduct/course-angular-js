@@ -1,6 +1,6 @@
 import { TodoRepository } from './todo-repository.ts';
 import TodoView from './todo.view.ts';
-import TodoItem from './todo.model.ts';
+import {TodoItem} from './todo.model.ts';
 
 export class TodoController {
 	[prop: string]: any;
@@ -133,13 +133,12 @@ export class TodoController {
 	 * in storage based on the checkbox's state.
 	 *
 	 * @param {number} id The ID of the element to complete or uncomplete
-	 * @param {object} checkbox The checkbox to check the state of complete
-	 *                          or not
+	 * @param {object} item The item to change completenes state
 	 * @param {boolean|undefined} silent Prevent re-filtering the todo items
 	 */
-	toggleComplete(id: number, completed: TodoItem, silent?: boolean) {
-		this.repository.update(id, completed, () => {
-			this.view.render('elementComplete', {id, completed});
+	toggleComplete(id: number, completed: boolean, silent?: boolean) {
+		this.repository.update(id, {completed: completed}, item => {
+			this.view.render('elementComplete', item);
 		});
 
 		if (!silent) {
@@ -148,12 +147,12 @@ export class TodoController {
 	}
 
 	/**
-	 * Will toggle ALL checkboxes' on/off state and completeness of repositorys.
+	 * Will toggle ALL checkboxes' on/off state and completeness of repositories.
 	 * Just pass in the event object.
 	 */
-	toggleAll(completed: TodoItem) {
-		this.repository.read({completed: !completed}, data => {
-			for (let item of data) {
+	toggleAll(completed: boolean) {
+		this.repository.read({completed: !completed}, items => {
+			for (let item of items) {
 				this.toggleComplete(item.id, completed, true);
 			}
 		});

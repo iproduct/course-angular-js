@@ -1,4 +1,4 @@
-import TodoItem from './todo.model.ts';
+import {TodoItem} from './todo.model.ts';
 
 const htmlEscapes: { [key: string]: string } = {
 	'&': '&amp',

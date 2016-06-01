@@ -1,6 +1,6 @@
 import {qs, qsa, $on, $parent, $delegate} from './utils';
+import {TodoItem} from './todo.model.ts';
 import TodoTemplate from './todo.template';
-import TodoItem from './todo.model.ts';
 
 interface ItemState {
     [prop: string]: any;
@@ -83,7 +83,7 @@ export default class TodoView {
         toggleAll: (parameter: ItemState) => this.$toggleAll.checked = parameter.checked,
         setFilter: (parameter: string) => _setFilter(parameter),
         clearNewTodo: (parameter: any) => this.$newTodo.value = '',
-        elementComplete: (parameter: TodoItem) => _elementComplete(parameter.id, parameter.completed),
+        elementComplete: (item: TodoItem) => _elementComplete(item.id, item.completed),
         editItem: (parameter: TodoItem) => _editItem(parameter.id, parameter.title),
         editItemDone: (parameter: TodoItem) => this._editItemDone(parameter.id, parameter.title),
     };

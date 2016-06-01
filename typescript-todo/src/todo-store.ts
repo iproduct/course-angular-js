@@ -1,11 +1,11 @@
-import TodoItem from './todo.model.ts';
+import {TodoItem, ItemData} from './todo.model.ts';
 
-export class Query {
-	[propName: string]: any
+export interface QueryCallback {
+	(data: Array<TodoItem>): any
 }
 
-export interface QueryCallback  {
-	(data: Array<TodoItem>) : any
+export interface UpdateCallback {
+	(data: TodoItem): any
 }
 
 
@@ -20,11 +20,11 @@ export interface QueryCallback  {
  * real life you probably would be making AJAX calls
  */
 export class TodoStore {
-	constructor(private dbName: string, callback?: ()=>any) {
+	constructor(private dbName: string, callback?: () => any) {
 
 		if (!localStorage[dbName]) {
 			const data = {
-				todos: new Array<TodoItem>() 
+				todos: new Array<TodoItem>()
 			};
 
 			localStorage[dbName] = JSON.stringify(data);
@@ -48,7 +48,7 @@ export class TodoStore {
 		 *	 // hello: world in their properties
 		 * })
 	 */
-	find(query: Query, callback: QueryCallback){
+	find(query: ItemData, callback: QueryCallback) {
 		const todos: Array<TodoItem> = JSON.parse(localStorage[this.dbName]).todos;
 
 		callback.call(this, todos.filter((todo: TodoItem) => {
@@ -66,7 +66,7 @@ export class TodoStore {
 	 *
 	 * @param {function} callback The callback to fire upon retrieving data
 	 */
-	findAll(callback: QueryCallback){
+	findAll(callback: QueryCallback) {
 		if (callback) {
 			callback.call(this, JSON.parse(localStorage[this.dbName]).todos);
 		}
@@ -80,7 +80,7 @@ export class TodoStore {
 	 * @param {function} callback The callback to fire after saving
 	 * @param {number} id An optional param to enter an ID of an item to update
 	 */
-	save(updateData: TodoItem, callback: QueryCallback, id?: number){
+	save(updateData: ItemData, callback: UpdateCallback, id?: number) {
 		const data = JSON.parse(localStorage[this.dbName]);
 		const todos = data.todos;
 		const len = todos.length;
@@ -92,14 +92,12 @@ export class TodoStore {
 					for (let key in updateData) {
 						todos[i][key] = updateData[key];
 					}
+					localStorage[this.dbName] = JSON.stringify(data);
+					if (callback) {
+						callback.call(this, todos[i]);
+					}
 					break;
 				}
-			}
-
-			localStorage[this.dbName] = JSON.stringify(data);
-
-			if (callback) {
-				callback.call(this, JSON.parse(localStorage[this.dbName]).todos);
 			}
 		} else {
 			// Generate an ID
@@ -109,7 +107,7 @@ export class TodoStore {
 			localStorage[this.dbName] = JSON.stringify(data);
 
 			if (callback) {
-				callback.call(this, [updateData]);
+				callback.call(this, updateData);
 			}
 		}
 	}
@@ -120,7 +118,7 @@ export class TodoStore {
 	 * @param {number} id The ID of the item you want to remove
 	 * @param {function} callback The callback to fire after saving
 	 */
-	remove(id:number, callback: QueryCallback){
+	remove(id: number, callback: QueryCallback) {
 		const data = JSON.parse(localStorage[this.dbName]);
 		const todos = data.todos;
 		const len = todos.length;
@@ -144,8 +142,8 @@ export class TodoStore {
 	 *
 	 * @param {function} callback The callback to fire after dropping the data
 	 */
-	drop(callback: QueryCallback){
-		localStorage[this.dbName] = JSON.stringify({todos: []});
+	drop(callback: QueryCallback) {
+		localStorage[this.dbName] = JSON.stringify({ todos: [] });
 
 		if (callback) {
 			callback.call(this, JSON.parse(localStorage[this.dbName]).todos);

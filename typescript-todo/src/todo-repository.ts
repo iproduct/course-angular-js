@@ -1,5 +1,5 @@
-import TodoItem from './todo.model.ts';
-import { TodoStore, Query, QueryCallback } from './todo-store';
+import {TodoItem, ItemData} from './todo.model.ts';
+import { TodoStore, QueryCallback, UpdateCallback } from './todo-store';
 
 export interface TodosState {
 	active: number;
@@ -26,7 +26,7 @@ export class TodoRepository {
 	 * @param {string} [title] The title of the task
 	 * @param {function} [callback] The callback to fire after the model is created
 	 */
-	create(title: string = '', callback: QueryCallback) {
+	create(title: string = '', callback: UpdateCallback) {
 		const newItem = new TodoItem(0, title.trim(), false);
 		this.store.save(newItem, callback);
 	}
@@ -46,7 +46,7 @@ export class TodoRepository {
 	 * //Below will find a model with foo equalling bar and hello equalling world.
 	 * model.read({ foo: 'bar', hello: 'world' })
 	 */
-	read(query: Query | string | number , callback: QueryCallback) {
+	read(query: ItemData | string | number , callback: QueryCallback) {
 		const queryType = typeof query;
 
 		if (query === null) {
@@ -55,7 +55,7 @@ export class TodoRepository {
 			let queryId: number = parseInt(query.toString(), 10);
 			this.store.find({ id: queryId }, callback);
 		} else {
-			this.store.find(<Query>query, callback);
+			this.store.find(<ItemData>query, callback);
 		}
 	}
 
@@ -67,7 +67,7 @@ export class TodoRepository {
 	 * @param {object} data The properties to update and their new value
 	 * @param {function} callback The callback to fire when the update is complete.
 	 */
-	update(id: number, data: TodoItem, callback: QueryCallback) {
+	update(id: number, data: ItemData, callback: UpdateCallback) {
 		this.store.save(data, callback, id);
 	}
 
