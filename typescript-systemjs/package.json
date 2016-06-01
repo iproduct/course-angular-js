@@ -1,0 +1,26 @@
+{
+  "name": "greeter",
+  "version": "1.0.0",
+  "description": "This sample shows basic class definition and instantiation.",
+  "main": "greeter.js",
+  "dependencies": {
+    "es6-promise": "^3.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^1.8.10",
+    "typings":"^1.0.4"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "typings": "typings",
+    "postinstall": "typings install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

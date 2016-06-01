@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "es3",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap":  true,
+        "declaration": false,
+        "noImplicitAny": false,
+        "noLib": false,
+        "rootDir": "."
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./greeter.ts",
+        "./typings/es6-promise/es6-promise.d.ts"
+    ]
+}

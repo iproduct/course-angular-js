@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> TypeScript Greeter </title>
+  <script src='./node_modules/systemjs/dist/system.js'></script>
+  <script src='./node_modules/es6-promise/dist/es6-promise.js'></script>
+</head>
+
+<body>
+  <h1>Hello TypeScript Demo</h1>
+  <div id="content"></div>
+  <script>
+    System.config({
+      "baseURL": "/",
+      "defaultJSExtensions": true,
+      "map": {
+        "es6-promise": "./node_modules/es6-promise/dist/es6-promise.js",
+      }
+    });
+    
+    // loads './greeter.js' from the current directory  
+    System.import('./greeter.js').then(null, console.error.bind(console)); 
+  </script>
+</body>
+</html>
