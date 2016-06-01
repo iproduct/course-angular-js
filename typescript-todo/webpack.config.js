@@ -36,7 +36,7 @@ const cspDirectives = [
 
 
 module.exports = {
-    entry: "./src/greeter.ts",
+    entry: "./src/app.ts",
     output: {
         filename: "./dist/bundle.js",
     },
