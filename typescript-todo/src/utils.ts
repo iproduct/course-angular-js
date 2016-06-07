@@ -7,6 +7,9 @@ declare global {
 }
 NodeList.prototype.forEach = Array.prototype.forEach;
 
+export interface TodoEventHandler {
+	(target: Element | Window, type: string, callback: EventListener, useCapture?: boolean): void;
+}
 
 // Get element(s) by CSS selector:
 export function qs(selector: string, scope?: Element) {
@@ -18,7 +21,7 @@ export function qsa(selector: string, scope?: Element) {
 }
 
 // addEventListener wrapper:
-export function $on(target: Element | Window, type: string, callback: EventListener, useCapture?: boolean) {
+export function $on(target: Element | Window, type: string, callback: EventListener, useCapture?: boolean): void {
 	target.addEventListener(type, callback, !!useCapture);
 }
 

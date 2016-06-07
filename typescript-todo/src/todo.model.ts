@@ -1,8 +1,9 @@
 export interface ItemData {
-	[propName: string]: any;
+    [propName: string]: number | boolean | string | ItemData;
 	id?: number;
 	title?: string;
 	completed?: boolean;
+	// next?: ItemData;
 }
 
 export class TodoItem implements ItemData{

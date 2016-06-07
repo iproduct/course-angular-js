@@ -10,7 +10,8 @@
     "concurrently": "^2.0.0",
     "lite-server": "^2.2.0",
     "typescript": "^1.8.10",
-    "typings":"^1.0.4"
+    "typings":"^1.0.4",
+    "systemjs": "^0.19.29"
   },
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
