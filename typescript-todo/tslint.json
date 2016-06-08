@@ -118,7 +118,7 @@
         ],
         "quotemark": [
             true,
-            "double",
+            "single",
             "avoid-escape"
         ],
         "semicolon": [

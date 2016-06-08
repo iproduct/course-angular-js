@@ -47,9 +47,9 @@ export class TodoRepository {
 	 * model.read({ foo: 'bar', hello: 'world' })
 	 */
 	read(query: ItemData | string | number , callback: QueryCallback) {
-		const queryType = typeof query;
+		const queryType: string = typeof query;
 
-		if (query === null) {
+		if (query === undefined) {
 			this.store.findAll(callback);
 		} else if (queryType === 'string' || queryType === 'number') {
 			let queryId: number = parseInt(query.toString(), 10);

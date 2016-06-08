@@ -6,7 +6,7 @@ export class TodoController {
 	[prop: string]: any;
 	_activeRoute: string;
 	_lastActiveRoute: string;
-	
+
 	/**
 	 * Take a repository & view, then act as controller between them
 	 * @param  {object} repository The repository instance
@@ -38,9 +38,9 @@ export class TodoController {
 	 * Event fires on load. Gets all items & displays them
 	 */
 	showAll() {
-		this.repository.read(null, data => this.view.render('showEntries', data));
+		this.repository.read(undefined, data => this.view.render('showEntries', data));
 	}
-	
+
 	/**
 	 * Renders all active tasks
 	 */

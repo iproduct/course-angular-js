@@ -1,8 +1,8 @@
-import {TodoController} from "./todo.controller";
-import {TodoStore} from "./todo-store";
-import {TodoRepository} from "./todo-repository";
-import TodoTemplate from "./todo.template";
-import TodoView from "./todo.view";
+import {TodoController} from './todo.controller';
+import {TodoStore} from './todo-store';
+import {TodoRepository} from './todo-repository';
+import TodoTemplate from './todo.template';
+import TodoView from './todo.view';
 
 export default class TodoMain {
     store: TodoStore;

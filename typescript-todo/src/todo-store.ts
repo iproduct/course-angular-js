@@ -1,4 +1,4 @@
-import {TodoItem, ItemData} from "./todo.model.ts";
+import {TodoItem, ItemData} from './todo.model.ts';
 
 export interface QueryCallback {
     (data: Array<TodoItem>): any;
@@ -9,7 +9,7 @@ export interface UpdateCallback {
 }
 
 interface StorageData {
-    todos: Array<TodoItem>;
+    todos: TodoItem[];
 }
 
 /*jshint eqeqeq:false */
@@ -51,7 +51,7 @@ export class TodoStore {
 	 *	 // hello: world in their properties
 	 * })
 	 */
-    find(query: ItemData, callback: QueryCallback) {
+    find(query: ItemData, callback: QueryCallback): void {
 		const todos: Array<TodoItem> = JSON.parse(localStorage[this.dbName]).todos;
 
 		callback.call(this, todos.filter((todo: TodoItem) => {
@@ -69,7 +69,7 @@ export class TodoStore {
 	 *
 	 * @param {function} callback The callback to fire upon retrieving data
 	 */
-    findAll(callback: QueryCallback) {
+    findAll(callback: QueryCallback): void {
 		if (callback) {
 			callback.call(this, JSON.parse(localStorage[this.dbName]).todos);
 		}
@@ -83,23 +83,22 @@ export class TodoStore {
 	 * @param {function} callback The callback to fire after saving
 	 * @param {number} id An optional param to enter an ID of an item to update
 	 */
-    save(updateData: ItemData, callback: UpdateCallback, id?: number) {
+    save(updateData: ItemData, callback: UpdateCallback, id?: number): void {
 		const data: StorageData = JSON.parse(localStorage[this.dbName]);
 		const todos: ItemData[] = data.todos;
-		const len: number = todos.length;
 
 		// If an ID was actually given, find the item and update each property
 		if (id) {
-			for (let i: number = 0; i < len; i++) {
-				if (todos[i].id === id) {
+			for (let todo of todos) {
+				if (todo.id === id) {
 					for (let key in updateData) {
 						if(updateData.hasOwnProperty(key)) {
-							todos[i][key] = updateData[key];
+							todo[key] = updateData[key];
 						}
 					}
 					localStorage[this.dbName] = JSON.stringify(data);
 					if (callback) {
-						callback.call(this, todos[i]);
+						callback.call(this, todo);
 					}
 					break;
 				}
@@ -147,7 +146,7 @@ export class TodoStore {
 	 *
 	 * @param {function} callback The callback to fire after dropping the data
 	 */
-    drop(callback: QueryCallback) {
+    drop(callback: QueryCallback): void {
 		localStorage[this.dbName] = JSON.stringify({ todos: [] });
 
 		if (callback) {
