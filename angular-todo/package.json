@@ -1,0 +1,53 @@
+{
+  "name": "typescript-webpack",
+  "version": "1.0.0",
+  "description": "Typescript demo using webpack.",
+  "main": "./lib/bundle.js",
+  "scripts": {
+    "lint": "tsconfig-lint .",
+    "postinstall": "npm run typings-install",
+    "server": "npm run server:dev:hmr:livereload",
+    "server:dev": "node --max-old-space-size=4096 ./node_modules/webpack-dev-server/bin/webpack-dev-server --progress --profile --colors --watch --display-error-details --display-cached --open",
+    "server:dev:hmr": "npm run server:dev -- --hot",
+    "server:dev:hmr:livereload": "npm run server:dev:hmr -- --inline",
+    "server:prod": "npm run superstatic",
+    "setup": "npm install --global typings rimraf && npm install --no-optional",
+    "start": "npm run server",
+    "start:hmr": "npm run server:dev:hmr",
+    "start:hmr:livereload": "npm run server:dev:hmr:livereload",
+    "start:dev": "npm run server:dev",
+    "start:prod": "npm run server:prod",
+    "typings": "typings",
+    "typings-install": "typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iproduct/course-angular.git"
+  },
+  "keywords": [
+    "typescript",
+    "webpack",
+    "demo"
+  ],
+  "author": "Trayan Iliev",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/iproduct/course-angular/issues"
+  },
+  "homepage": "https://github.com/iproduct/course-angular#readme",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "core-js": "^2.4.0",
+    "jquery": "^3.0.0"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^0.17.0",
+    "html-webpack-plugin": "^2.19.0",
+    "source-map-loader": "^0.1.5",
+    "tsconfig-lint": "^0.11.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
