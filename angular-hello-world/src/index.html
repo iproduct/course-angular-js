@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>TodoMVC in Pure TypeScript</title>
+	<link rel="stylesheet" href="css/todos.css">
+</head>
+
+<body ng-app="myApp" ng-controller="AppController as ctrl">
+	<p>Hello {{ctrl.name}}!</p>
+	<button ng-click="ctrl.name = 'AngularJS Geek'">Change my name</button>
+	<input placeholder="My real name" ng-model="ctrl.name">
+	<section id="interests">
+		<ol>
+			<li ng-repeat="interest in ctrl.interests">{{interest}}</li>
+		</ol>		
+		<button ng-click="ctrl.addInterest()">Add interest</button>		
+		<input placeholder="New interest" ng-model="ctrl.newInterest">
+	</section>
+	
+</body>
+
+</html>
