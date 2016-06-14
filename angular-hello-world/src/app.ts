@@ -1,12 +1,14 @@
 'use strict';
 import * as angular from 'angular';
 import './capitalizer';
-import {BetterAppController as AppController } from './better-app.controller';
+import {BetterAppController as AppController} from './better-app.controller';
+import {onEnter} from './on-enter.directive';
 // import {ICapitalizerService} from './capitalizer';
 
 angular.module('myApp', ['capitalizer'])
   .value('interests', ['JAVA', 'ANGULAR', 'NODE', 'HAPI'])
-  .controller('AppController', AppController);
+  .controller('AppController', AppController)
+  .directive('onEnter', onEnter);
 
 
 

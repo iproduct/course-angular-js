@@ -15,8 +15,9 @@
 		<ol>
 			<li ng-repeat="interest in ctrl.interests">{{interest}}</li>
 		</ol>		
-		<button ng-click="ctrl.addInterest()">Add interest</button>		
-		<input placeholder="New interest" ng-model="ctrl.newInterest">
+		<button ng-click="ctrl.addInterest()">Add interest</button>	
+			
+		<input placeholder="New interest" ng-model="ctrl.newInterest" on-enter="ctrl.addInterest()">
 	</section>
 	
 </body>

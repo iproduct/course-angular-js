@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> TypeScript Greeter </title>
+  <style>
+    #interests li {
+      list-style-type: none;
+    }
+  </style>
+</head>
+
+<body ng-app="myApp" ng-controller="AppController as ctrl">
+  <h1>Hello TypeScript Demo</h1>
+  <div id="content"></div>
+  <p data-ng-bind-template="Hello, {{ctrl.name}}!"></p>
+  <button ng-click="ctrl.name = 'Angular Geek'">Change my name</button>
+  <input placeholder="My name" ng-model="ctrl.name">
+  <section id="interests">
+    <ul>
+      <li ng-repeat="interest in ctrl.interests track by $index">{{$index + 1}}. {{interest}}</li>
+    </ul>
+  </section>
+</body>
+
+</html>
