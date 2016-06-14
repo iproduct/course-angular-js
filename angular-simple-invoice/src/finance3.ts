@@ -26,7 +26,7 @@ interface YahooFinanceForeignRatesResult {
     };
 }
 angular.module('finance3', [])
-    .factory('currencyConverter', ['$http', function ($http: ng.IHttpService) {
+    .factory('currencyConverter', ['$http', function ($http: ng.IHttpService): CurrencyConverter {
         const YAHOO_FINANCE_URL_PATTERN =
             '//query.yahooapis.com/v1/public/yql?q=select * from ' +
             'yahoo.finance.xchange where pair in ("PAIRS")&format=json&' +
@@ -38,7 +38,7 @@ angular.module('finance3', [])
             return amount * usdToForeignRates[outCurr] / usdToForeignRates[inCurr];
         };
 
-        let refresh = function () {
+        let refresh = function (): Promise<void> {
             const url = YAHOO_FINANCE_URL_PATTERN.
                 replace('PAIRS', 'USD' + currencies.join('","USD'));
             return $http.jsonp(url).then((response: ng.IHttpPromiseCallbackArg<{}>) => {

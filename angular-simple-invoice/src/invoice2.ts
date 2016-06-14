@@ -1,6 +1,3 @@
-/// <reference path="../typings/globals/angular/index.d.ts" />
-/// <reference path="./finance2.ts" />
-
 'use strict';
 import * as angular from 'angular';
 import './finance2';
@@ -13,7 +10,7 @@ angular.module('invoice2', ['finance2'])
     this.inCurr = 'EUR';
     this.currencies = currencyConverter.currencies;
 
-    this.total = function total(outCurr: string) {
+    this.total = function total(outCurr: string): number {
       return currencyConverter.convert(this.qty * this.cost, this.inCurr, outCurr);
     };
     this.pay = function pay(): void {
