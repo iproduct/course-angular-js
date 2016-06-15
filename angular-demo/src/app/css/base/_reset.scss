@@ -100,11 +100,11 @@ a {
 // http://jaydenseric.com/blog/forget-normalize-or-resets-lay-your-own-css-foundation
 button {
     overflow: visible; // for IE
-    border: 0; // reset
+    /*border: 0; // reset */
     font: inherit; // reset
     -webkit-font-smoothing: inherit; // fix buggy inheritance
     letter-spacing: inherit; // reset
-    background: none; // reset
+    /*background: none; // reset*/
     cursor: pointer; // pointers FTW
 }
 

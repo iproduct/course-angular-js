@@ -30,7 +30,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    font-family: 'Roboto-Regular', monospace, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 14px; // necessary for older browsers
     font-size: 1.4rem; // text's default font size (14px)
     font-style: normal;
@@ -40,7 +40,7 @@ body {
 }
 
 .container > header > h1 {
-    font-family: monospace, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 40px;
     font-size: 4.0rem;
 }

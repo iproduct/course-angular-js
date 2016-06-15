@@ -16,10 +16,19 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
+    border-radius: 10px;
 }
-.modal-content {
+.modal-content, .modal-title {
     padding:10px;
     text-align: center;
+    clear: both;
+}
+.modal-title {
+    color: white;
+    background: #6666ff;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+
 }
 .modal-close {
     position: absolute;
@@ -28,4 +37,5 @@
     padding: 5px;
     cursor: pointer;
     display: inline-block;
+    color: #ddd;
 }

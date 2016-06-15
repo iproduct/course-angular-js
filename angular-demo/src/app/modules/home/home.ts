@@ -16,6 +16,8 @@ import "../commons/directives/hello-simple.directive";
 // Pre-loading the html templates into the Angular's $templateCache
 const templateHomeUrl:any = require("./home.template.html");
 
+homeModule.controller("HomeController", HomeController);
+
 homeModule.config(["$stateProvider", ($stateProvider:IStateProvider) => {
     $stateProvider
         .state("home", {
