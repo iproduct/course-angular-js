@@ -1,14 +1,14 @@
-"use strict";
+'use strict';
 
-describe("App", () => {
+describe('App', () => {
 
     beforeEach(() => {
-        browser.get("/");
+        browser.get('/');
     });
 
-    it("should have a title", () => {
+    it('should have a title', () => {
         const subject:webdriver.promise.Promise<string> = browser.getTitle();
-        const expectedResult:string = "AngularJS Webpack Starter";
+        const expectedResult:string = 'AngularJS Webpack Starter';
         expect(subject).toEqual(expectedResult);
     });
 

@@ -1,9 +1,10 @@
 {
     "dependencies": {},
     "devDependencies": {},
-    "ambientDependencies": {
+    "globalDependencies": {
         "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#17ef40452039d19e06dc2a3815ea898c505860fa",
         "angular-material": "github:DefinitelyTyped/DefinitelyTyped/angular-material/angular-material-0.9.0.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd",
+        "angular-mocks": "registry:dt/angular-mocks#1.5.0+20160608104721",
         "angular-protractor": "github:DefinitelyTyped/DefinitelyTyped/angular-protractor/angular-protractor.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd",
         "angular-translate": "github:DefinitelyTyped/DefinitelyTyped/angular-translate/angular-translate.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd",
         "angular-ui-router": "github:DefinitelyTyped/DefinitelyTyped/angular-ui-router/angular-ui-router.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd",

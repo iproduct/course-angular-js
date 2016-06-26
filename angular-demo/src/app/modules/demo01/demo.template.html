@@ -1,0 +1,8 @@
+<h2>Food Ordering Demo</h2>
+<br />
+<div ng-controller="FoodController as vm">
+    <button ng-click="vm.spicy('chili')">Chili</button>
+    <button ng-click="vm.spicy(vm.customSpice)">Custom spice</button>
+    <input ng-model="vm.customSpice">
+    <p>The food is {{vm.spice}} spicy!</p>
+</div>

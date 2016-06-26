@@ -1,11 +1,11 @@
 'use strict';
 
-import {homeModule} from '../../home';
+import {demo01Module} from '../../demo01';
 
 // Pre-loading the html templates into the Angular's $templateCache
 let templateModalUrl: any = require('./modal.template.html');
 
-homeModule.directive('modal', function (): ng.IDirective {
+demo01Module.directive('modal2', function (): ng.IDirective {
     return {
         link: linkModal,
         replace: true, // Replace with template

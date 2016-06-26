@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Angular
 
@@ -18,14 +18,14 @@ import ILocationProvider = angular.ILocationProvider;
 import ITranslateProvider = angular.translate.ITranslateProvider;
 
 // load all modules
-import {ModuleRegistry} from "./modules/commons/modules/module.registry";
-const moduleRegistry:ModuleRegistry = require("./modules/modules").moduleRegistry;
+import {ModuleRegistry} from './modules/commons/modules/module.registry';
+const moduleRegistry:ModuleRegistry = require('./modules/modules').moduleRegistry;
 
 // application controller
-import {AppController} from "./app.controller";
+import {AppController} from './app.controller';
 
 // Pre-loading the html templates into the Angular's $templateCache
-const templateAppUrl:any = require("./app.template.html");
+const templateAppUrl:any = require('./app.template.html');
 
 /**
  * The application
@@ -33,58 +33,58 @@ const templateAppUrl:any = require("./app.template.html");
 export class App {
     public static bootstrap():void {
         const modules:any = [];
-        modules.push("ui.router");
-        modules.push("pascalprecht.translate");
-        modules.push("immutable-angular");
-        modules.push("ngMaterial");
+        modules.push('ui.router');
+        modules.push('pascalprecht.translate');
+        modules.push('immutable-angular');
+        modules.push('ngMaterial');
 
         moduleRegistry.getModuleNames().forEach((entry:string) => {
            modules.push(entry);
         });
 
-        const appModule:IModule = angular.module("appModule", modules);
+        const appModule:IModule = angular.module('appModule', modules);
 
-        appModule.component("app", {
+        appModule.component('app', {
             controller: AppController,
-            controllerAs: "vm",
+            controllerAs: 'vm',
             templateUrl: templateAppUrl,
         });
 
-        appModule.config(["$urlRouterProvider", "$stateProvider", "$translateProvider", "$locationProvider",
+        appModule.config(['$urlRouterProvider', '$stateProvider', '$translateProvider', '$locationProvider',
         ($urlRouterProvider:IUrlRouterProvider, $stateProvider:IStateProvider, $translateProvider:ITranslateProvider,
          $locationProvider: ILocationProvider):any => {
-            $urlRouterProvider.otherwise("/home");
+            $urlRouterProvider.otherwise('/home');
 
             $stateProvider
-                .state("appMain", {
+                .state('appMain', {
                     abstract: true, // means that this state will never be directly activated (user can never navigate to it)
-                    url: "",
+                    url: '',
                 });
 
             // i18n
             $translateProvider.useStaticFilesLoader({
-                prefix: "assets/translations/",
-                suffix: ".json",
+                prefix: 'assets/translations/',
+                suffix: '.json',
             });
 
             // Preferred language to be used when there is no language set or there is an error while downloading the translations files
-            $translateProvider.preferredLanguage("en");
+            $translateProvider.preferredLanguage('en');
 
             // Language to be used for those translation keys that are not defined in another language
-            $translateProvider.fallbackLanguage("en");
+            $translateProvider.fallbackLanguage('en');
 
             // Enable escaping of HTML
-            $translateProvider.useSanitizeValueStrategy("escaped");
+            $translateProvider.useSanitizeValueStrategy('escaped');
 
             // Enable HTML5 History API: adds support for pretty URLs
             // requires server configuration (URL rewriting)
             $locationProvider.html5Mode(true);
         },]);
 
-        appModule.run(["$state", "$log", ($state:IStateService, logger:ILogService) => {
-            logger.debug("Bootstrapped the application...");
+        appModule.run(['$state', '$log', ($state:IStateService, logger:ILogService) => {
+            logger.debug('Bootstrapped the application...');
 
-            logger.debug("Registered UI-router states: ");
+            logger.debug('Registered UI-router states: ');
             let index:number;
             let len:number;
             for (index = 0, len = $state.get().length; index < len; ++index) {
@@ -95,8 +95,8 @@ export class App {
             }
         },]);
 
-        angular.bootstrap(document, ["appModule"], {
-            "strictDi": true,
+        angular.bootstrap(document, ['appModule'], {
+            'strictDi': true,
         });
     }
 }

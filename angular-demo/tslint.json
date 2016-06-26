@@ -1,7 +1,7 @@
 {
     "rules": {
         "member-access": [
-            true,
+            false,
             "check-accessor",
             "check-constructor"
         ],
@@ -18,7 +18,6 @@
             "parameter",
             "arrow-parameter",
             "property-declaration",
-            "variable-declaration",
             "member-variable-declaration"
         ],
         "ban": [
@@ -73,7 +72,7 @@
         ],
         "eofline": true,
         "indent": [
-            true,
+            false,
             "spaces"
         ],
         "max-line-length": [
@@ -93,8 +92,7 @@
         "align": [
             true,
             "parameters",
-            "arguments",
-            "statements"
+            "arguments"
         ],
         "class-name": true,
         "comment-format": [
@@ -105,10 +103,10 @@
             false,
             "never-prefix"
         ],
-        "jsdoc-format": true,
-        "no-angle-bracket-type-assertion": true,
+        "jsdoc-format": false,
+        "no-angle-bracket-type-assertion": false,
         "no-consecutive-blank-lines": true,
-        "no-constructor-vars": true,
+        "no-constructor-vars": false,
         "one-line": [
             true,
             "check-catch",
@@ -119,7 +117,7 @@
         ],
         "quotemark": [
             true,
-            "double",
+            "single",
             "avoid-escape"
         ],
         "semicolon": [

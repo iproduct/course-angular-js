@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /*
  * When testing with webpack and ES6, we have to do some extra
@@ -19,22 +19,22 @@ const opts:any = args[0];
 
 Error.stackTraceLimit = Infinity;
 
-const path:any = require("path");
+const path:any = require('path');
 
 //require("core-js");
-require("core-js/es6");
-require("core-js/es7/reflect");
-require("angular");
-require("angular-mocks");
-require("angular-ui-router");
-require("angular-translate");
-require("angular-material");
-require("immutable");
-require("moment");
-require("rxjs");
+require('core-js/es6');
+require('core-js/es7/reflect');
+require('angular');
+require('angular-mocks');
+require('angular-ui-router');
+require('angular-translate');
+require('angular-material');
+require('immutable');
+require('moment');
+require('rxjs');
 
 // load the RxJS operators
-require("../src/rxjs-operators");
+require('../src/rxjs-operators');
 
 /*
  Ok, this is kinda crazy. We can use the the context method on
@@ -45,7 +45,7 @@ require("../src/rxjs-operators");
  any file that ends with spec.ts and get its path. By passing in true
  we say do this recursively
  */
-const testsContext:any = require.context("../src", true, /\.spec\.ts/);
+const testsContext:any = require.context('../src', true, /\.spec\.ts/);
 
 // do NOT delete any of the code below, it is necessary to load the unit tests
 

@@ -1,4 +1,5 @@
-import * as angular from 'angular';
+'use strict';
+import 'angular';
 
 angular.module('myApp', [])
 .controller('AppController', function($log: ng.ILogService):void {

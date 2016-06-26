@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
 // Polyfills
 //require("core-js");
-require("core-js/es6");
-require("core-js/es7/reflect");
+require('core-js/es6');
+require('core-js/es7/reflect');
 
 if (DEVELOPMENT) {
     // Ensure that we get detailed stack trackes during development (useful with node & Webpack)

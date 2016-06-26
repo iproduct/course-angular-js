@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
@@ -7,7 +7,7 @@ export abstract class AbstractController {
     private logger:ILogService;
     private $state:IStateService;
 
-    public static $inject:Array<string> = ["$log", "$state"];
+    public static $inject:Array<string> = ['$log', '$state'];
 
     public constructor(logger:ILogService, $state:IStateService) {
         this.logger = logger;

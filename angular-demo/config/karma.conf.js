@@ -81,6 +81,7 @@ module.exports = (config) => {
         // https://www.npmjs.com/package/karma-junit-reporter
         // https://www.npmjs.com/package/karma-spec-reporter
         reporters: [
+            'kjhtml',
             "mocha",
             "progress",
             "coverage",

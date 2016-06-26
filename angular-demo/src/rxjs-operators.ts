@@ -3,7 +3,7 @@
 // Add any additional required operators here
 
 // load all operators
-require("rxjs/Rx");
+require('rxjs/Rx');
 
 // alternative: load operators selectively
 // require("rxjs/add/operator/map");
