@@ -3,6 +3,7 @@ import * as angular from 'angular';
 export interface CurrencyConverter {
     currencies: Array<string>;
     convert: CurrencyConverterFunction;
+    refresh: () => Promise<void>;
 }
 
 interface CurrencyConverterFunction {
@@ -31,7 +32,7 @@ angular.module('finance3', [])
             '//query.yahooapis.com/v1/public/yql?q=select * from ' +
             'yahoo.finance.xchange where pair in ("PAIRS")&format=json&' +
             'env=store://datatables.org/alltableswithkeys&callback=JSON_CALLBACK';
-        const currencies: string[] = ['USD', 'EUR', 'CNY'];
+        let currencies: string[] = ['USD', 'EUR', 'CNY'];
         let usdToForeignRates: CurrencyRates = {};
 
         let convert: CurrencyConverterFunction = function (amount, inCurr, outCurr) {
@@ -58,6 +59,7 @@ angular.module('finance3', [])
 
         return {
             convert: convert,
-            currencies: currencies
+            currencies: currencies,
+            refresh: refresh
         };
     }]);

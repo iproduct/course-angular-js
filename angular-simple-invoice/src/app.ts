@@ -1,5 +1,7 @@
 import * as angular from 'angular';
-import './invoice3';
+import './invoice4';
+import './simple-dialog.directive';
+
 
 /**
  * The main TodoMVC app module.
