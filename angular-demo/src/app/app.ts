@@ -37,6 +37,7 @@ export class App {
         modules.push('pascalprecht.translate');
         modules.push('immutable-angular');
         modules.push('ngMaterial');
+        modules.push('ngResource');
 
         moduleRegistry.getModuleNames().forEach((entry:string) => {
            modules.push(entry);

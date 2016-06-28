@@ -8,8 +8,8 @@ import './on-enter.directive';
 angular.module('invoice4', ['finance3', 'keyEvents'])
   .controller('InvoiceController', ['currencyConverter', function (currencyConverter: CurrencyConverter): void {
     this.qty = 1;
-    this.cost = 2;
-    this.inCurr = 'EUR';
+    this.cost = 1;
+    this.inCurr = 'GBP';
     this.currencies = currencyConverter.currencies;
     this.newCurrency = '';
 

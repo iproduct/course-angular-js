@@ -26,6 +26,7 @@ require('core-js/es6');
 require('core-js/es7/reflect');
 require('angular');
 require('angular-mocks');
+require('angular-resource');
 require('angular-ui-router');
 require('angular-translate');
 require('angular-material');

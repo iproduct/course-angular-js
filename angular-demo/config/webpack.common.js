@@ -33,7 +33,13 @@ module.exports = {
     },
 
     devServer: {
-        outputPath: helpers.root("dist")
+        outputPath: helpers.root("dist"),
+        proxy: {
+            '/api/*': {
+                target: 'http://localhost:9000/',
+                secure: false
+            }
+        }
     },
     // Options affecting the output of the compilation
     // reference: http://webpack.github.io/docs/configuration.html#output
@@ -170,6 +176,12 @@ module.exports = {
                 test: /sinon\.js$/,
                 loader: "imports?define=>false,require=>false",
             },
+
+            // Fonts
+            {
+                test   : /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+                loader : 'file-loader'
+            }
         ],
         
         // Post processors
@@ -274,5 +286,5 @@ module.exports = {
         autoprefixer({
             browsers: [ "last 2 versions" ],
         }),
-    ],
+    ]
 };

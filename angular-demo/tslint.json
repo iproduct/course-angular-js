@@ -81,7 +81,7 @@
         ],
         "no-require-imports": false,
         "no-trailing-whitespace": true,
-        "object-literal-sort-keys": true,
+        "object-literal-sort-keys": false,
         "trailing-comma": [
             false,
             {
