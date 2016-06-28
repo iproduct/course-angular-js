@@ -37,7 +37,7 @@ export class App {
         modules.push('pascalprecht.translate');
         modules.push('immutable-angular');
         modules.push('ngMaterial');
-        modules.push('ngResource');
+        // modules.push('ngResource');
 
         moduleRegistry.getModuleNames().forEach((entry:string) => {
            modules.push(entry);
@@ -79,7 +79,7 @@ export class App {
 
             // Enable HTML5 History API: adds support for pretty URLs
             // requires server configuration (URL rewriting)
-            $locationProvider.html5Mode(true);
+            $locationProvider.html5Mode(false);
         },]);
 
         appModule.run(['$state', '$log', ($state:IStateService, logger:ILogService) => {

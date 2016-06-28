@@ -1,0 +1,10 @@
+<h2>Products List</h2>
+<br />
+<div ng-controller='AddProductController as $ctrl'>
+    <button ng-click='$ctrl.toggleModal()'>Open Modal</button>
+    <my-modal show='$ctrl.modalShown' modal-title='"Add Product Dialog"' width='400px' height='60%'>
+        <p>Add new product data</p>
+        <p></p>
+        
+    </my-modal>
+</div>

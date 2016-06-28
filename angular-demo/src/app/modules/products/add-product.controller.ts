@@ -1,22 +1,22 @@
 'use strict';
 
-import { AbstractController } from '../commons/controllers/abstract.controller';
-
 import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
 
-export class AddProductController extends AbstractController {
-    customSpice: string = 'wasabi';
-    spice: string = 'habanero';
+import {AbstractController} from '../commons/controllers/abstract.controller';
 
+export class AddProductController extends AbstractController {
+    public modalShown: boolean = false;
     public static $inject: Array<string> = ['$log', '$state'];
 
-    public constructor(logger: ILogService, $state: IStateService) {
-        super(logger, $state);
-        logger.debug('Food controller loaded...');
-    }
-
-    spicy(spice: string): void {
-        this.spice = spice;
+    public toggleModal(): void {
+        this.modalShown = !this.modalShown;
     };
+
+    // necessary to help AngularJS know about what to inject and in which order
+
+    public constructor(logger:ILogService, $state:IStateService) {
+        super(logger, $state);
+        logger.debug('AddProductController loaded...');
+    }
 }

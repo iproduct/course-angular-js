@@ -5,7 +5,7 @@ import {productsModule} from '../../products';
 // Pre-loading the html templates into the Angular's $templateCache
 let templateModalUrl: any = require('./modal.template.html');
 
-productsModule.directive('modal2', function (): ng.IDirective {
+productsModule.directive('myModal', function (): ng.IDirective {
     return {
         link: linkModal,
         replace: true, // Replace with template

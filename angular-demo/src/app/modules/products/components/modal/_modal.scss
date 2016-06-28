@@ -1,5 +1,5 @@
 // styles of the foo component
-.modal-overlay {
+.my-modal-overlay {
     position:absolute;
     z-index:9999;
     top:0;
@@ -9,7 +9,7 @@
     background-color:#000;
     opacity: 0.8;
 }
-.modal-background {
+.my-modal-background {
     z-index:10000;
     position: absolute;
     top: 50%;
@@ -18,19 +18,19 @@
     background-color: #fff;
     border-radius: 10px;
 }
-.modal-content, .modal-title {
+.my-modal-content, .my-modal-title {
     padding:10px;
     text-align: center;
     clear: both;
 }
-.modal-title {
+.my-modal-title {
     color: white;
     background: #6666ff;
     overflow: hidden;
     border-radius: 10px 10px 0 0;
 
 }
-.modal-close {
+.my-modal-close {
     position: absolute;
     top: 5px;
     right: 5px;

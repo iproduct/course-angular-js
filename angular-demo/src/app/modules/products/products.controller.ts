@@ -13,7 +13,7 @@ export class ProductsController extends AbstractController {
 
     public constructor(logger: ILogService, $state: IStateService) {
         super(logger, $state);
-        logger.debug('Food controller loaded...');
+        logger.debug('Products controller loaded...');
     }
 
     spicy(spice: string): void {

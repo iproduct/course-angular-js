@@ -18,8 +18,10 @@ import '../commons/directives/hello-simple.directive';
 
 // Pre-loading the html templates into the Angular's $templateCache
 const templateProductsUrl:any = require('./products.template.html');
+const templateAddProductUrl:any = require('./add-product.template.html');
 
 productsModule.controller('ProductsController', ProductsController);
+productsModule.controller('AddProductController', AddProductController);
 
 productsModule.config(['$stateProvider', ($stateProvider:IStateProvider) => {
     $stateProvider
@@ -40,7 +42,7 @@ productsModule.config(['$stateProvider', ($stateProvider:IStateProvider) => {
                 'main@': {
                     controller: AddProductController,
                     controllerAs: '$ctrl',
-                    templateUrl: templateProductsUrl,
+                    templateUrl: templateAddProductUrl,
                 },
             },
         });
