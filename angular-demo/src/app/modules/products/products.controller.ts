@@ -6,8 +6,6 @@ import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
 
 export class ProductsController extends AbstractController {
-    customSpice: string = 'wasabi';
-    spice: string = 'habanero';
 
     public static $inject: Array<string> = ['$log', '$state'];
 
@@ -16,7 +14,4 @@ export class ProductsController extends AbstractController {
         logger.debug('Products controller loaded...');
     }
 
-    spicy(spice: string): void {
-        this.spice = spice;
-    };
 }

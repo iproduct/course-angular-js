@@ -3,10 +3,10 @@ export interface Product {
     'name': string;
     'vendor'?: string;
     'permalink': string;
-    'imageUrl?': string;
+    'imageUrl'?: string;
     'snippet': string;
     'price'?: number;
-    'currency'?: number;
+    'currency'?: string;
 }
 
 export interface ProductResource extends ng.resource.IResource<Product>, Product {

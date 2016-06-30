@@ -1,10 +1,25 @@
-<h2>Products List</h2>
+<h2>Products</h2>
 <br />
 <div ng-controller='AddProductController as $ctrl'>
-    <button ng-click='$ctrl.toggleModal()'>Open Modal</button>
-    <my-modal show='$ctrl.modalShown' modal-title='"Add Product Dialog"' width='400px' height='60%'>
-        <p>Add new product data</p>
-        <p></p>
-        
+    <button ng-click='$ctrl.toggleModal()'>Add New Product</button>
+    <my-modal show='$ctrl.modalShown' modal-title='"Add New Product"' width='400px' min-height='60%'>
+        <div ng-controller="AddProductController">
+            <form novalidate class="simple-form" role="form">
+                <div class="form-group">
+                    <label for="name">Product Name: </label>
+                    <input type="text" class="form-control" ng-model="$ctrl.product.name">
+                </div>
+                <div class="form-group">
+                    <label for="vendor">Vendor: </label>
+                    <input type="text" class="form-control" ng-model="$ctrl.product.vendor">
+                </div>
+
+                <input type="submit" ng-click="$ctrl.update()" value="Save" class="btn btn-default" />
+                <input type="button" ng-click="$ctrl.reset()" value="Reset" class="btn btn-default" />
+            </form>
+            <pre>user = {{$ctrl.product | json}}</pre>
+            <pre>master = {{$ctrl.productMaster | json}}</pre>
+        </div>
+
     </my-modal>
 </div>

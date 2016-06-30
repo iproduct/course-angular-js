@@ -2,21 +2,44 @@
 
 import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
+import { Product } from './models/products.model';
 
 import {AbstractController} from '../commons/controllers/abstract.controller';
 
 export class AddProductController extends AbstractController {
-    public modalShown: boolean = false;
-    public static $inject: Array<string> = ['$log', '$state'];
+    modalShown: boolean = false;
+    productMaster: Product = {
+        'id': 0,
+        'name': '',
+        // 'vendor': '',
+        'permalink': '',
+        // 'imageUrl': '',
+        'snippet': '',
+        // 'price': 0,
+        'currency': 'USD'
+    };
+    product: Product;
 
-    public toggleModal(): void {
+    // necessary to help AngularJS know about what to inject and in which order
+    static $inject: Array<string> = ['$log', '$state'];
+
+    public constructor(logger: ILogService, $state: IStateService) {
+        super(logger, $state);
+        this.reset();
+        logger.debug('AddProductController loaded...');
+    }
+
+    toggleModal(): void {
         this.modalShown = !this.modalShown;
     };
 
-    // necessary to help AngularJS know about what to inject and in which order
+    update(): void {
+        this.productMaster = angular.copy(this.product);
+    };
 
-    public constructor(logger:ILogService, $state:IStateService) {
-        super(logger, $state);
-        logger.debug('AddProductController loaded...');
-    }
+    reset(): void {
+        this.product = angular.copy(this.productMaster);
+    };
+
+
 }
