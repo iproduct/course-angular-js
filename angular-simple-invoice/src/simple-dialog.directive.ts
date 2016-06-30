@@ -9,12 +9,12 @@ angular.module('dialogs',[])
 function DialogDirective($log: ng.ILogService): ng.IDirective {
 	return {
 		bindToController: true,
-		controller: ['$log', DialogController],
+		controller: DialogController,
 		controllerAs: '$ctrl',
 		replace: true,
 		restrict: 'E',
 		scope: {
-			//dialogTitle: '@dialogTitle',             // the title uses the data-binding from the parent scope
+			dialogTitle: '@dialogTitle',             // the title uses the data-binding from the parent scope
 			onOk: '&',              // create a delegate onOk function
 			onCancel: '&',          // create a delegate onCancel function
 			visible: '='            // set up visible to accept data-binding
@@ -36,9 +36,10 @@ function DialogDirective($log: ng.ILogService): ng.IDirective {
  * Controller for dialog popup directive
  */
 class DialogController {
-	onOk: (...args: any[]) => any;
+	onOk: (...args: string[]) => string;
 	onCancel: (...args: any[]) => any;
 	dialogTitle: string = 'Payment Details';
+	static $inject: string[] = ['$log'];
 	constructor(public $log: ng.ILogService) {
 	}
 
@@ -51,4 +52,5 @@ class DialogController {
 		this.onOk();
 	}
 }
+
 

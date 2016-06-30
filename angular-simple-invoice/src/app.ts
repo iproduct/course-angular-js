@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import './invoice4';
+import './invoice5';
 import './simple-dialog.directive';
 
 

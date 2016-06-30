@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<div ng-app="invoice4" ng-controller="InvoiceController as invoice">
+	<div ng-app="invoice5" ng-controller="InvoiceController as invoice">
 		<b>Invoice:</b>
 		<div>
 			Quantity: <input type="number" min="0" ng-model="invoice.qty" required>
@@ -21,10 +21,10 @@
     		</select>
 		</div>
 		<div>
+			<!--Add Currency: <input type="text" min="0" ng-model="invoice.newCurrency" 
+					on-enter="invoice.addCurrency()">-->
 			Add Currency: <input type="text" min="0" ng-model="invoice.newCurrency" 
-					on-enter="invoice.addCurrency()">
-	<!--		Add Currency: <input type="text" min="0" ng-model="invoice.newCurrency" 
-				ng-keypress="invoice.keypressed($event.keyCode)"> -->
+				ng-keypress="invoice.keypressed($event.keyCode)"> 
 		</div>
 		<div>
 			<b>Total:</b>
@@ -33,10 +33,11 @@
 			</span>
 			<button class="btn" ng-click="invoice.pay()">Checkout</button>
 		</div>
-	<!--	<dialog dialog-title="Hello {{invoice.username}}." visible="invoice.showPaymentDialog" on-cancel="invoice.showPaymentDialog=false" 
+		<dialog dialog-title="Hello {{invoice.username}}." visible="invoice.showPaymentDialog" 
+				on-cancel="invoice.showPaymentDialog=false" 
 				on-ok="invoice.showPaymentDialog=false">
 			Dear {{invoice.username}}, you have to pay us {{invoice.total(invoice.inCurr) | currency:invoice.inCurr}} to complete the purchase.
-		</dialog> -->
+		</dialog> 
 	</div>
 </body>
 
