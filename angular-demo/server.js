@@ -16,7 +16,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-var COMMENTS_FILE = path.join(__dirname, 'comments.json');
+var COMMENTS_FILE = path.join(__dirname, 'products.json');
 
 app.set('port', (process.env.PORT || 9000));
 
@@ -35,7 +35,7 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/api/todos', function(req, res) {
+app.get('/api/products', function(req, res) {
   fs.readFile(COMMENTS_FILE, function(err, data) {
     if (err) {
       console.error(err);
@@ -45,7 +45,7 @@ app.get('/api/todos', function(req, res) {
   });
 });
 
-app.post('/api/todos', function(req, res) {
+app.post('/api/products', function(req, res) {
   fs.readFile(COMMENTS_FILE, function(err, data) {
     if (err) {
       console.error(err);

@@ -1,7 +1,14 @@
+<div class="language-selector">
+    <button ng-click="$ctrl.changeLanguage('bg')">{{'BUTTON_LANG_BG' | translate}}</button>
+    <button ng-click="$ctrl.changeLanguage('en')">{{'BUTTON_LANG_EN' | translate}}</button>
+    <button ng-click="$ctrl.changeLanguage('de')">{{'BUTTON_LANG_DE' | translate}}</button>
+</div>
+
 <h1>AngularJS Demos</h1>
 <hr />
+
 <div ui-view="main"></div>
 
-<!--<div ng-show="vm.isCurrentState('home')">
+<!--<div ng-show="$ctrl.isCurrentState('home')">
     <div ui-view="home"></div>
 </div>-->

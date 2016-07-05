@@ -1,0 +1,14 @@
+{
+    "LANGUAGES": {
+        "EN": "en",
+        "FR": "fr",
+        "DE": "de",
+        "BG": "bg"
+    },
+    "BUTTON_LANG_EN": "Englisch",
+    "BUTTON_LANG_DE": "Deutsch",
+    "BUTTON_LANG_BG": "Bulgarisch",
+    
+    "PRODUCT_REQUIRED": "Product name is required.",
+    "PRODUCT_MIN_LENGTH": "Product name should be at leaast 2 characters long."
+}

@@ -47,7 +47,7 @@ export class App {
 
         appModule.component('app', {
             controller: AppController,
-            controllerAs: 'vm',
+            controllerAs: '$ctrl',
             templateUrl: templateAppUrl,
         });
 
@@ -79,7 +79,7 @@ export class App {
 
             // Enable HTML5 History API: adds support for pretty URLs
             // requires server configuration (URL rewriting)
-            $locationProvider.html5Mode(false);
+            $locationProvider.html5Mode(true);
         },]);
 
         appModule.run(['$state', '$log', ($state:IStateService, logger:ILogService) => {
