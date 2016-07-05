@@ -16,7 +16,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 
-var COMMENTS_FILE = path.join(__dirname, 'products.json');
+var PRODUCTS_FILE = path.join(__dirname, 'products','products.json');
 
 app.set('port', (process.env.PORT || 9000));
 
@@ -36,38 +36,48 @@ app.use(function(req, res, next) {
 });
 
 app.get('/api/products', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
+  fs.readFile(PRODUCTS_FILE, function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
     }
-    res.json(JSON.parse(data));
+    res.json(JSON.parse(data).reverse());
   });
 });
 
 app.post('/api/products', function(req, res) {
-  fs.readFile(COMMENTS_FILE, function(err, data) {
+  fs.readFile(PRODUCTS_FILE, function(err, data) {
     if (err) {
       console.error(err);
       process.exit(1);
     }
-    var comments = JSON.parse(data);
+    var products = JSON.parse(data);
+    
+    product = req.body;
+    
     // NOTE: In a real implementation, we would likely rely on a database or
     // some other approach (e.g. UUIDs) to ensure a globally unique id. We'll
     // treat Date.now() as unique-enough for our purposes.
-    var newComment = {
-      id: Date.now(),
-      author: req.body.author,
-      text: req.body.text,
+    var newProduct = {
+      'id': Date.now(),
+      'name': product.name,
+      'vendor': product.vendor,
+      'permalink': product.permalink,
+      'imageUrl': product.imageUrl,
+      'snippet': product.snippet,
+      'price': product.price,
+      'currency': product.currency
     };
-    comments.push(newComment);
-    fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
+    console.log('Add product: ', product);
+    products.push(newProduct);
+    fs.writeFile(PRODUCTS_FILE, JSON.stringify(products, null, 4), function(err) {
       if (err) {
         console.error(err);
         process.exit(1);
       }
-      res.json(comments);
+      res.json(product);
     });
+
   });
 });
 

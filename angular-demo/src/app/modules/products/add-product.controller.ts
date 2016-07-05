@@ -3,8 +3,8 @@
 import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
 import { Product } from './models/products.model';
-
-import {AbstractController} from '../commons/controllers/abstract.controller';
+import { ProductsHttpService } from './services/products-http.service';
+import { AbstractController } from '../commons/controllers/abstract.controller';
 
 export class AddProductController extends AbstractController {
   modalShown: boolean = false;
@@ -23,9 +23,9 @@ export class AddProductController extends AbstractController {
   currencies: string[] = ['USD', 'EUR', 'CNY', 'GBP', 'BGN'];
 
   // necessary to help AngularJS know about what to inject and in which order
-  static $inject: Array<string> = ['$log', '$state'];
+  static $inject: Array<string> = ['$log', '$state', 'ProductsHttpService'];
 
-  public constructor(logger: ILogService, $state: IStateService) {
+  public constructor(logger: ILogService, $state: IStateService, private productsHttpService: ProductsHttpService) {
     super(logger, $state);
     this.reset(undefined);
     logger.debug('AddProductController loaded ...');
@@ -37,6 +37,8 @@ export class AddProductController extends AbstractController {
 
   update(): void {
     this.productMaster = angular.copy(this.product);
+    this.productsHttpService.addProduct(this.product)
+      .then( result => this.logger.info(result) );
   };
 
   reset(productForm: ng.IFormController): void {

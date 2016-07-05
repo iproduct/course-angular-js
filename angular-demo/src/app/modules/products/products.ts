@@ -13,6 +13,7 @@ export const productsModule:IModule = angular.module('productsModule', ['commons
 import './components/foo/foo';
 import './components/product-list/product-list';
 import './services/product.service';
+import './services/products-http.service';
 import './components/modal/modal';
 import '../commons/directives/hello-simple.directive';
 

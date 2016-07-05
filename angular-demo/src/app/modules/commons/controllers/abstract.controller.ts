@@ -4,7 +4,7 @@ import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
 
 export abstract class AbstractController {
-    private logger:ILogService;
+    public logger:ILogService;
     private $state:IStateService;
 
     public static $inject:Array<string> = ['$log', '$state'];
