@@ -2,6 +2,15 @@
     "LANGUAGES": {
         "EN": "en",
         "FR": "fr",
-        "DE": "de"
-    }
+        "DE": "de",
+        "BG": "bg"
+    },
+    "BUTTON_LANG_EN": "English",
+    "BUTTON_LANG_DE": "German",
+    "BUTTON_LANG_BG": "Bulgarian",
+    
+    "PRODUCT_REQUIRED": "Product name is required.",
+    "PRODUCT_MIN_LENGTH": "Product name should be at leaast 2 characters long.",
+    "PERMALINK_REQUIRED": "Permanent link identifier field is required.",
+    "PERMALINK_NOT_VALID": "Permanent link identifier field should include only letters, numbers, and '-', Ex: 'samsung-galaxy-5'."
 }

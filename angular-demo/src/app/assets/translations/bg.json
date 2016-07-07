@@ -1,0 +1,17 @@
+{
+    "LANGUAGES": {
+        "EN": "en",
+        "FR": "fr",
+        "DE": "de",
+        "BG": "bg"
+    },
+    "BUTTON_LANG_EN": "Английски",
+    "BUTTON_LANG_DE": "Немски",
+    "BUTTON_LANG_BG": "Български",
+
+    "PRODUCT_REQUIRED": "Името на продукта е задължително поле.",
+    "PRODUCT_MIN_LENGTH": "Името на продукта трябва да бъде поне 2 символа.",
+    "PERMALINK_REQUIRED": "Постоянен идентификатор е задължително поле.",
+    "PERMALINK_NOT_VALID": "Постоянен идентификатор трябва да включва само букви, цифри и '-', напр: 'samsung-galaxy-5'."
+
+}

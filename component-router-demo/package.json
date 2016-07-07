@@ -1,0 +1,20 @@
+{
+  "name": "component-router-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [
+    "angular-1.5",
+    "component",
+    "router"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/router": "^0.2.0",
+    "angular": "^1.5.7"
+  }
+}

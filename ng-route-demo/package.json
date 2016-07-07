@@ -1,0 +1,15 @@
+{
+  "name": "ng-route-demo",
+  "version": "1.0.0",
+  "description": "Basic routing demo AngularJS tutorial",
+  "main": "script.js",
+  "scripts": {
+    "start": "serve"
+  },
+  "keywords": [
+    "angular",
+    "routing"
+  ],
+  "author": "",
+  "license": "ISC"
+}

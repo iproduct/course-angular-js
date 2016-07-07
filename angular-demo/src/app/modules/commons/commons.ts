@@ -7,6 +7,9 @@ import ILogService = angular.ILogService;
 
 export const commonsModule: IModule = angular.module('commonsModule', []);
 
+import './directives/permalink-validator.directive';
+import './directives/permalink-unique-validator.directive';
+
 commonsModule.run(['$log', (logger: ILogService) => {
     logger.debug('Commons module loaded...');
 },]);
