@@ -36,11 +36,7 @@ app.use(function(req, res, next) {
 });
 
 app.get('/api/products', function(req, res) {
-<<<<<<< HEAD
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-=======
   fs.readFile(PRODUCTS_FILE, function(err, data) {
->>>>>>> ee2e965a6ee9f867956fc1c4456af2ffabda0e47
     if (err) {
       console.error(err);
       process.exit(1);
@@ -50,11 +46,7 @@ app.get('/api/products', function(req, res) {
 });
 
 app.post('/api/products', function(req, res) {
-<<<<<<< HEAD
-  fs.readFile(COMMENTS_FILE, function(err, data) {
-=======
   fs.readFile(PRODUCTS_FILE, function(err, data) {
->>>>>>> ee2e965a6ee9f867956fc1c4456af2ffabda0e47
     if (err) {
       console.error(err);
       process.exit(1);

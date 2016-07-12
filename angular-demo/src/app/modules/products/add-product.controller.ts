@@ -38,7 +38,7 @@ export class AddProductController extends AbstractController {
   update(): void {
     this.productMaster = angular.copy(this.product);
     this.productsHttpService.addProduct(this.product)
-      .then( result => this.logger.info(result) );
+      .then( (result: Product) => this.logger.info(result) );
   };
 
   reset(productForm: ng.IFormController): void {

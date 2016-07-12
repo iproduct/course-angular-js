@@ -4,7 +4,6 @@ import IStateProvider = angular.ui.IStateProvider;
 import IModule = angular.IModule;
 import ILogService = angular.ILogService;
 
-import {ProductsController} from './products.controller';
 import {AddProductController} from './add-product.controller';
 
 export const productsModule:IModule = angular.module('productsModule', ['commonsModule', 'ui.router', 'ngResource']);
@@ -18,10 +17,8 @@ import './components/modal/modal';
 import '../commons/directives/hello-simple.directive';
 
 // Pre-loading the html templates into the Angular's $templateCache
-const templateProductsUrl:any = require('./products.template.html');
 const templateAddProductUrl:any = require('./add-product.template.html');
 
-productsModule.controller('ProductsController', ProductsController);
 productsModule.controller('AddProductController', AddProductController);
 
 productsModule.config(['$stateProvider', ($stateProvider:IStateProvider) => {
@@ -31,9 +28,7 @@ productsModule.config(['$stateProvider', ($stateProvider:IStateProvider) => {
             url: '/products',
             views: {
                 'main@': {
-                    controller: ProductsController,
-                    controllerAs: '$ctrl',
-                    templateUrl: templateProductsUrl,
+                    template: `<product-list></product-list>`,
                 },
             },
         }).state('add-product', {

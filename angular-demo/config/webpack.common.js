@@ -29,7 +29,9 @@ module.exports = {
 
     stats: {
         colors: true,
-        reasons: true,
+        reasons: false,
+        timings: false,
+        
     },
 
     devServer: {

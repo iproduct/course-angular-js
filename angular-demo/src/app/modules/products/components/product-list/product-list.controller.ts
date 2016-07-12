@@ -1,7 +1,7 @@
 'use strict';
 
 import { AbstractController } from '../../../commons/controllers/abstract.controller';
-import { Product, ProductResourceClass, ProductResource } from '../../models/products.model';
+import { Product, ProductResourceClass /*, ProductResource */ } from '../../models/products.model';
 import { ProductsHttpService } from '../../services/products-http.service';
 
 export class ProductListController extends AbstractController {

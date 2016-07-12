@@ -6,6 +6,7 @@
 import 'angular';
 
 import 'angular-ui-router';
+// import 'angular-route';
 import 'angular-resource';
 import 'angular-translate';
 import 'angular-translate-loader-static-files';

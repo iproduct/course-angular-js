@@ -2,7 +2,7 @@
 
 import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
-import { Product, ProductResourceClass } from '../models/products.model';
+import { Product } from '../models/products.model';
 import { productsModule } from '../products';
 
 import {AbstractController} from '../../commons/controllers/abstract.controller';
