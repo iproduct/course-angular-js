@@ -24,6 +24,6 @@ describe('Unit testing helloSimple directive', () => {
     // fire all the watches, so the scope expression {{1 + 2}} will be evaluated
     $rootScope.$digest();
     // Check that the compiled element contains the templated content
-    expect(element.html()).toContain('Hello Simple Directive');
+    expect(element.html()).toContain('Hello Simple Directive 3');
   });
 });

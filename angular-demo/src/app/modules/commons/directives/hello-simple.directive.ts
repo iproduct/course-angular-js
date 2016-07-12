@@ -11,7 +11,7 @@ commonsModule.directive('helloSimple', function (): IDirective {
         replace: true,
         restrict: 'E', // An Element Directive.
         scope: true, // inherits child scope from parent.
-        template: '<h3>Hello Simple Directive</h3>'
+        template: '<h3>Hello Simple Directive {{1 + 2}}</h3>'
     };
 });
 
