@@ -8,9 +8,15 @@
     height:100%;
     background-color:#000;
     opacity: 0.8;
+    transition: all linear 0.5s;
 }
+
+.my-modal-show-hide.ng-hide {
+  opacity: 0;
+}
+
 .my-modal-background {
-    z-index:10000;
+    z-index:999998;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -19,11 +25,13 @@
     border-radius: 10px;
 }
 .my-modal-content, .my-modal-title {
+    z-index:10001;
     padding:10px;
     text-align: center;
     clear: both;
 }
 .my-modal-title {
+    z-index:999999;
     color: white;
     background: #6666ff;
     overflow: hidden;
@@ -38,4 +46,15 @@
     cursor: pointer;
     display: inline-block;
     color: #ddd;
+}
+
+/* Animations with ngAnimate */
+.my-modal-show-hide {
+  z-index:999999;
+  opacity: 1;
+  transition: all linear 0.5s;
+}
+
+.my-modal-show-hide.ng-hide {
+  opacity: 0;
 }

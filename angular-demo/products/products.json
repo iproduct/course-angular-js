@@ -158,7 +158,7 @@
         "permalink": "a",
         "imageUrl": "img/phones/t-mobile-mytouch-4g.0.jpg",
         "snippet": "a",
-        "price": "1",
+        "price": 1,
         "currency": "USD"
     },
     {
@@ -168,7 +168,7 @@
         "permalink": "mouse-logitech",
         "imageUrl": "img/phones/t-mobile-mytouch-4g.0.jpg",
         "snippet": "Logitech optical mouse with Wifi dongle",
-        "price": "23",
+        "price": 23,
         "currency": "USD"
     }
 ]

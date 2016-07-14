@@ -2,7 +2,6 @@
 <br />
 
 <div class="container-fluid">
-  <add-product class="row"></add-product>
   <form role="form" class="row">
     <div class="col-md-2 sidebar">
       <!--Sidebar content-->
@@ -16,10 +15,11 @@
         <label for="sort">Sort by:</label> 
         <select ng-model="$ctrl.orderProp" id="sort" >
           <option value="name">Alphabetical</option>
-          <option value="age">Newest</option>
+          <option value="id">Newest</option>
         </select>
       </div>
 
+  	  <button ng-click='$ctrl.toggleModal()' class="btn btn-primary">Add New Product</button>
 
      <!-- <a href="/add-product" class="btn btn-primary">Add New Product</a> -->
 
@@ -35,9 +35,11 @@
           </a>
           <a href="/add-product">{{product.name}}</a>
           <p>{{product.snippet}}</p>
+          <p>{{product.price | fraction: 2}}</p>
         </li>
       </ul>
 
     </form>
   </div>
+  <add-product class="row" show="$ctrl.addProductModalShown"></add-product>
 </div>

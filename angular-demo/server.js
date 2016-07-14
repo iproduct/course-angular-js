@@ -65,7 +65,7 @@ app.post('/api/products', function(req, res) {
       'permalink': product.permalink,
       'imageUrl': product.imageUrl,
       'snippet': product.snippet,
-      'price': product.price,
+      'price': parseFloat(product.price),
       'currency': product.currency
     };
     console.log('Add product: ', product);

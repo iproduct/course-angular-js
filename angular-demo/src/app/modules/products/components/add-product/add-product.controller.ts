@@ -7,7 +7,7 @@ import { ProductsHttpService } from '../../services/products-http.service';
 import { AbstractController } from '../../../commons/controllers/abstract.controller';
 
 export class AddProductController extends AbstractController {
-  modalShown: boolean = false;
+  modalShown: boolean;
   productMaster: Product = {
     'id': 0,
     'name': '',
@@ -30,10 +30,6 @@ export class AddProductController extends AbstractController {
     this.reset(undefined);
     logger.debug('AddProductController loaded ...');
   }
-
-  toggleModal(): void {
-    this.modalShown = !this.modalShown;
-  };
 
   update(): void {
     this.productMaster = angular.copy(this.product);

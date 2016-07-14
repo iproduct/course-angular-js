@@ -11,5 +11,8 @@ productsModule
   .component('addProduct', {
     controller: AddProductController,
     controllerAs: '$ctrl',
-    templateUrl: templateAddProductUrl
+    templateUrl: templateAddProductUrl,
+    bindings: {
+      modalShown: '=show'
+    }
   });
