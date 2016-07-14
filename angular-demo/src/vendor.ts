@@ -14,6 +14,9 @@ import 'angular-translate-loader-static-files';
 // Angular Material
 import 'angular-material';
 
+//Angular Animate
+import 'angular-animate';
+
 // JSData
 import 'js-data';
 

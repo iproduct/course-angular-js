@@ -36,6 +36,7 @@ export class App {
         modules.push('ui.router');
         modules.push('pascalprecht.translate');
         modules.push('immutable-angular');
+        modules.push('ngAnimate');
         modules.push('ngMaterial');
         // modules.push('ngResource');
 

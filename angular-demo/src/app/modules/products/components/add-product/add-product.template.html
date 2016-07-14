@@ -1,9 +1,6 @@
-<h2>Products</h2>
-<br />
-<div ng-controller='AddProductController as $ctrl'>
-    <button ng-click='$ctrl.toggleModal()'>Add New Product</button>
+    <button ng-click='$ctrl.toggleModal()' class="btn btn-primary">Add New Product</button>
     <my-modal show='$ctrl.modalShown' modal-title='"Add New Product"' width='400px' min-height='60%'>
-        <div ng-controller="AddProductController">
+        <div>
             <form name='productForm' novalidate class="simple-form" role="form">
                 <div class="form-group">
                     <label for="name">Product Name: </label>
@@ -61,9 +58,8 @@
                 <input type="submit" ng-click="$ctrl.update()" value="Save" class="btn btn-default" />
                 <input type="button" ng-click="$ctrl.reset(productForm)" value="Reset" class="btn btn-default" />
             </form>
-            <pre>user = {{$ctrl.product | json}}</pre>
-            <pre>master = {{$ctrl.productMaster | json}}</pre>
+           <!-- <pre>user = {{$ctrl.product | json}}</pre>
+            <pre>master = {{$ctrl.productMaster | json}}</pre>-->
         </div>
 
     </my-modal>
-</div>

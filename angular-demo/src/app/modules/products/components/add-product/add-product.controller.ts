@@ -2,9 +2,9 @@
 
 import IStateService = angular.ui.IStateService;
 import ILogService = angular.ILogService;
-import { Product } from './models/products.model';
-import { ProductsHttpService } from './services/products-http.service';
-import { AbstractController } from '../commons/controllers/abstract.controller';
+import { Product } from '../../models/products.model';
+import { ProductsHttpService } from '../../services/products-http.service';
+import { AbstractController } from '../../../commons/controllers/abstract.controller';
 
 export class AddProductController extends AbstractController {
   modalShown: boolean = false;
@@ -51,20 +51,22 @@ export class AddProductController extends AbstractController {
 
   getItemState(item: ng.INgModelController): string {
     let state = '';
-    if (item.$pristine) {
-      state += 'pristine, ';
-    }
-    if (item.$touched) {
-      state += 'touched, ';
-    }
-    if (item.$dirty) {
-      state += 'dirty, ';
-    }
-    if (item.$valid) {
-      state += 'valid';
-    }
-    if (item.$invalid) {
-      state += 'invalid';
+    if(item) {  
+      if (item.$pristine) {
+        state += 'pristine, ';
+      }
+      if (item.$touched) {
+        state += 'touched, ';
+      }
+      if (item.$dirty) {
+        state += 'dirty, ';
+      }
+      if (item.$valid) {
+        state += 'valid';
+      }
+      if (item.$invalid) {
+        state += 'invalid';
+      }
     }
     return state;
   }

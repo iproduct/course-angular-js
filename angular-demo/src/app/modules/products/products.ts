@@ -11,15 +11,10 @@ export const productsModule:IModule = angular.module('productsModule', ['commons
 // import all elements of the module
 import './components/foo/foo';
 import './components/product-list/product-list';
+import './components/add-product/add-product';
 import './services/product.service';
 import './services/products-http.service';
-import './components/modal/modal';
 import '../commons/directives/hello-simple.directive';
-
-// Pre-loading the html templates into the Angular's $templateCache
-const templateAddProductUrl:any = require('./add-product.template.html');
-
-productsModule.controller('AddProductController', AddProductController);
 
 productsModule.config(['$stateProvider', ($stateProvider:IStateProvider) => {
     $stateProvider
@@ -36,9 +31,7 @@ productsModule.config(['$stateProvider', ($stateProvider:IStateProvider) => {
             url: '/add-product',
             views: {
                 'main@': {
-                    controller: AddProductController,
-                    controllerAs: '$ctrl',
-                    templateUrl: templateAddProductUrl,
+                   template: `<add-product></add-product>`,
                 },
             },
         });

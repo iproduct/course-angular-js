@@ -20,7 +20,7 @@ describe('productList ', () => {
       ctrl = <ProductListController>$componentController('productList', undefined);
     }));
 
-    it('should create a `phones` property with 2 phones fetched with `$http`', () => {
+    it('should create a `products` property with 2 products fetched with `$http`', () => {
       jasmine.addCustomEqualityTester(angular.equals);
 
       expect(ctrl.products).toEqual([]);
