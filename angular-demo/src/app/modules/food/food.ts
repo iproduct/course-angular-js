@@ -6,23 +6,21 @@ import ILogService = angular.ILogService;
 
 import {FoodController} from './food.controller';
 
-export const demo01Module:IModule = angular.module('demo01Module', ['commonsModule', 'ui.router']);
+export const foodModule:IModule = angular.module('foodModule', ['commonsModule', 'ui.router']);
 
 // import all elements of the module
-import './components/foo/foo';
-import './components/modal/modal';
 import '../commons/directives/hello-simple.directive';
 
 // Pre-loading the html templates into the Angular's $templateCache
-const templateHomeUrl:any = require('./demo.template.html');
+const templateHomeUrl:any = require('./food.template.html');
 
-demo01Module.controller('FoodController', FoodController);
+foodModule.controller('FoodController', FoodController);
 
-demo01Module.config(['$stateProvider', ($stateProvider:IStateProvider) => {
+foodModule.config(['$stateProvider', ($stateProvider:IStateProvider) => {
     $stateProvider
-        .state('demo01', {
+        .state('food', {
             parent: 'appMain',
-            url: '/demo01',
+            url: '/food',
             views: {
                 'main@': {
                     controller: FoodController,
@@ -33,6 +31,6 @@ demo01Module.config(['$stateProvider', ($stateProvider:IStateProvider) => {
         });
 },]);
 
-demo01Module.run(['$log', (logger:ILogService) => {
-    logger.debug('Demo01 module loaded...');
+foodModule.run(['$log', (logger:ILogService) => {
+    logger.debug('Food demo module loaded...');
 },]);

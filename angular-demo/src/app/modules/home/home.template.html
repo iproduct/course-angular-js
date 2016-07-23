@@ -1,4 +1,25 @@
-<label>Hi, I'm the home module!</label>
+
+<article id="home">
+<h2>These are the demos from the IPT Course „AngularJS and EcmaScript 6 / TypeScript SPA Development”</h2>
+
+<section> The course provides in-depth study of state-of-the-art JavaScript (ES 5 & 6), TypeScript and AngularJS MVC framework for rapid development of modern, mobile-first, responsive single-page applications that are easy to extend and maintain in long run. The main topics that will be covered during the course include:
+<ol>
+    <li><em>1. Object-oriented JavaScript</em> – primitive types and objects, accessing objects by reference, properties, functions and methods, using this keyword, call,  apply,   & bind function methods,  prototypal inheritance, polymorphism and method overriding, classes and constructors, classical inheritance and using instanceof, using this, EcmaScript 6 (Harmony, ES 2015) class and constructor syntax, let and var, function lambdas (=>), Promises. Overview of common JS design patterns: Constructor, Module, Revealing Module, Singleton, Observer, Prototype, Factory, Mixin, Decorator.</li>
+    <li><em>2. Single Page Applications (SPA).</em> Horizontal and vertical SPA. Introduction to Model-View-Controller (MVC), Model-View-Presenter (MVC), Model-View-ViewModel (MVVM) – MV* patterns for development of more complex, extensible and easy to maintain web applications using AngularJS framework. Versions of JavaScript: EcmaScript 5, EcmaScript 6, and TypeScript – feature comparison. Novelties in ES6. Development setup and installation with npm, webpack and Sublime 3/ VS Code. Package dependencies and compiling ES6 and TypeScript projects.  Creating TypeScript projects. TypeScript compilation options.</li>
+    <li><em>3. Introduction to TypeScript</em> – Quickstart: functions, interfaces, classes and constructors. Common types: Boolean, Number, String, Array, Enum, Any, Void. Duck typing – declaring contracts using Interfaces: properties and optional properties, function types, class types, array types, hybrid types, extension of interfaces. Classes – constructors, public/private properties, get and set accessors, static and instance sides. JS modules – requirements for code modularity, different module systems, loaders, and JS design patterns: AMD, CommonJS, ES Harmony, UMD, System.js. Modules in TypeScript – internal and external modules, using import, export and require. Working with other JS libraries – declaring ambient internal and external module typings. Configuring, building and deploying TypeScript project. Functions and function types – optional default and rest parameters, function lambdas and use of this, overloads. Using generic type parameters – writing generic functions and classes, generic constructors, bounded generics. Using mixins in TypeScript. Declaration merging. Type inference and compatibility.
+    </li>
+    <li><em>4. Creating and bootstraping simple AngularJS TODO Application.</em> Tools, configuration, seed projects and CLI AngularJS + TypeScript generators: npm, package.json, angularjs-webpack-starter, Babel, Yeoman generator for AngularJS with TypeScript (generator-angular-typescript). AngularJS and TypeScript modules – dependencies, imports/exports, creation versus retrieval. Views and templates, using external templates with templateUrl. Contexts and expressions, interpolation - $scope and $parse. Scope as ViewModel – main methods ($new, $eval, $watch, $digest, $apply, $on, $destroy), isolate scopes, scope hierarchies, events propagation, lifecycle, integration within browser loop. Data binding – unidirectional vs. bidirectional. Controllers – integration with scopes. Main directives. Directive types and normalization. Directives that create scopes. Components. Angular events. Forms and directives. Binding to form and control state. Form validation – builtin and custom validators. CSS classes. Custom model update triggers, event debouncing. Implementing custom form controls using ngModel.  Overview of AngularJS specific TypeScript typings and interfaces (angular/index.d.ts).
+    </li>
+    <li><em>5. AngularJS Services</em> – built-in and custom services. Providing and consuming services. Dependency Injection (DI) – factory methods, module methods config and run, implicit, inline array and $inject annotations, using strict dependency injection. Using $injector, $provide, provides and decorators. Object persistence and query using services. REST APIs and levels of maturity. Using $log, $q, $http, $resource built-in services. Promises and asynchronous event pipelines. Building custom services. Repository design pattern. Filters – using filters in templates, controllers, services, and directives. Creating custom filters.</li>
+    <li><em>6. AngularJS routing. Component-based applications.</em> Components, routes, outlets, URLs, links, navigation. Route matching – route names, parameteres, default routes. Router lifecycle hooks – $routerCanReuse, $routerOnActivate, $routeOnReuse, $routerCanDeactivate, $routerOnDeactivate. Advanced rooting – nested views, paired states, ui-view. Using built-in services $location, $sce and $compile. Building custom directives – isolating the scope of a directive, manipulating DOM, wrapping existing content, adding event listeners. Transclusion. Creating embedded custom directives that communicate – using $compile service and Directive Definition Object properties (priority, restrict, template, scope, bindToController, controller, controllerAs, require - ?, ^, ^^, ?^, ?^^, transclude, compile, link). Pre and post-linking functions. Controller lifecycle hooks – $onInit, $onChanges, $onDestroy, $postLink.</li>
+    <li><em>7. Test Driven Development (TDD)</em> – unit/end-to-end testing AngularJS classes and components using Jasmine, Karma, angular-mocks (ngMock) and Protractor. Separation of concerns and dependency injection. Testing controllers, services, filters and directives. Using beforeAll(). Testing transclusion, external template, and embedded directives – tips and tricks, debugging. Using karma-ng-html2js-preprocessor to pre-compile HTML templates. Testing promises and asynchronous behavior. Review of sample AngularJS GitHub example projects (bigger ones).
+    </li>
+    <li><em>8. Wrapping up – developing AngularJS SPA.</em> i18n and l10n. Includes. Security. Applying animations – CSS and JavaScript animations. Differences between Angular 1 and Angular 2. Reactive programming with RxJS. Advanced concepts – Shadow DOM, lazy loading, Google Material Design. 
+    </li>
+
+</ol>
+</section>
+
 <br />
 <foo></foo>
 <br />
@@ -6,7 +27,9 @@
 <div ng-controller='HomeController as ctrl'>
     <button ng-click='ctrl.toggleModal()'>Open Modal</button>
     <modal show='ctrl.modalShown' modal-title='"Hello Dialog"' width='400px' height='60%'>
-        <p>Hello Simple Modal Window</p>
-        <p></p>
+        Hello Simple Modal Window
+        
     </modal>
 </div>
+
+<article>
